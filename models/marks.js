@@ -6,24 +6,32 @@ class Marks {
   }
   computeGrade() {
     let score = null;
-    if (this.marks >= 80) {
-      console.log(`${this.student}, you are in grade A`);
-      score = "A";
-    } else if (this.marks >= 70 && this.marks < 80) {
-      console.log(`${this.student}, you are in grade B`);
-      score = "B";
-    } else if (this.marks >= 60 && this.marks < 70) {
-      console.log(`${this.student}, you are in grade C`);
-      score = "C";
-    } else if (this.marks >= 50 && this.marks < 60) {
-      console.log(`${this.student}, you are in grade D`);
-      score = "D";
-    } else if (this.marks >= 40 && this.marks < 50) {
-      console.log(`${this.student}, you are in grade E`);
-      score = "E";
-    } else if (this.marks > 0 && this.marks < 40) {
-      console.log(`${this.student}, you are in grade F`);
-      score = "F";
+    switch (true) {
+      case this.marks > 79:
+        console.log(`${this.student} grade in ${this.subject} is A, Exellent`);
+        score = "A";
+        break;
+      case this.marks > 69:
+        console.log(`${this.student} grade in ${this.subject} is B, V.Good`);
+        score = "B";
+        break;
+      case this.marks > 59:
+        console.log(`${this.student} grade in ${this.subject} is C, Good`);
+        score = "C";
+        break;
+      case this.marks > 49:
+        console.log(
+          `${this.student} grade in ${this.subject} is D, Fairly passed`
+        );
+        score = "D";
+        break;
+
+      default:
+        console.log(
+          `${this.student} grade in ${this.subject} is F, Failed \n\t\t Read Harder`
+        );
+        score = "E";
+        break;
     }
     return score;
   }
